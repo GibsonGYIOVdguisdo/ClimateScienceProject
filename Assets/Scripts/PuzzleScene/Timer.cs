@@ -4,7 +4,7 @@ using UnityEngine;
 public class Timer: MonoBehaviour
 {
     private float TimePassed = 0;
-    private bool IsRunning = true;
+    private bool IsRunning = false;
     private TMP_Text TMP;
 
     private void Start()

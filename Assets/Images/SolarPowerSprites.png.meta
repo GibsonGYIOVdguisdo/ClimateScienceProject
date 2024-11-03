@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SolarPowerSprites_0: -9123210171678153452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
