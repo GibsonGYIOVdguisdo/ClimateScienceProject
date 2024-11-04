@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         float currentTime = timer.GetCurrentTime();
         Times.Add(currentTime);
         LastTime = currentTime;
+        Times.Sort();
         SceneManager.LoadScene("PostPuzzle");
     }
 
@@ -57,5 +58,14 @@ public class GameManager : MonoBehaviour
         {
             SpriteIndex = 0;
         }
+    }
+    public static float GetLastTime()
+    {
+        return LastTime;
+    }
+
+    public static int GetLastPlacement()
+    {
+        return Times.IndexOf(LastTime) + 1;
     }
 }
