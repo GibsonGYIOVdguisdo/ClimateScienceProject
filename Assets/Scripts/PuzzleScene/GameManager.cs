@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
     TileManager TileManager;
 
     static int SpriteIndex = 0;
-    public List<string> SpriteFileNames;
-    public List<string> SpriteTitles;
-    public List<string> SpriteDescriptions;
+    public static List<string> SpriteFileNames;
+    public static List<string> SpriteTitles;
+    public static List<string> SpriteDescriptions;
 
     private void Start()
     {
