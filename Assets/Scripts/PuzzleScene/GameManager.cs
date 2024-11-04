@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     TileManager TileManager;
 
     static int SpriteIndex = 0;
-    static List<string> SpriteFileNames = new List<string> {"Solarpower"};
-    static List<string> SpriteTitles = new List<string> { "Solarpanels" };
-    static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity" };
+    static List<string> SpriteFileNames = new List<string> {"Solarpower", "Windpower"};
+    static List<string> SpriteTitles = new List<string> { "Solarpanels", "Wind turbines" };
+    static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity", "Wind turbines use the wind to generate electricity"};
 
     private void Start()
     {
