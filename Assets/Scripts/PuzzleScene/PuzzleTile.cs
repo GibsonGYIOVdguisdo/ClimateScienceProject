@@ -8,7 +8,6 @@ public class PuzzleTile : MonoBehaviour
 
     private void Start()
     {
-        TileManager = FindFirstObjectByType<TileManager>();
         OriginalPosition = transform.position;
     }
 
@@ -37,5 +36,9 @@ public class PuzzleTile : MonoBehaviour
             SetPosition(EmptySpaceLocation);
             TileManager.UpdateTileLocation(TileIndex);
         }
+    }
+    public void SetTileManager(TileManager tileManager)
+    {
+        TileManager = tileManager;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System;
 public class TileManager : MonoBehaviour
 {
+    public int RandomiseAmount = 20;
     private GameManager GameManager;
     public GameObject[] Tiles;
     public Vector2[] PossibleTileLocations = new Vector2[9];
@@ -14,6 +15,7 @@ public class TileManager : MonoBehaviour
 
     private int EmptyTile;
     bool FirstMove = true;
+    bool Randomising = false;
     void Start()
     {
         GameManager = FindFirstObjectByType<GameManager>();
@@ -25,23 +27,34 @@ public class TileManager : MonoBehaviour
         Sprite[] sprites = Resources.LoadAll<Sprite>(spriteLocation);
         for (int i = 0; i < Tiles.Length; i++)
         {
+            TileLocations[i] = i;
             PossibleTileLocations[i] = Tiles[i].transform.position;
             Tiles[i].GetComponent<PuzzleTile>().SetSprite(sprites[i]);
+            Tiles[i].GetComponent<PuzzleTile>().SetTileManager(gameObject.GetComponent<TileManager>());
         }
     }
 
     public void RandomiseTiles()
     {
-        List<int> availableLocationIndexes = Enumerable.Range(0, PossibleTileLocations.Length).ToList();
-
-        for (int i = 0; i < Tiles.Length; i++)
-        {
-            int selectedIndex = UnityEngine.Random.Range(0, availableLocationIndexes.Count);
-            Tiles[i].GetComponent<PuzzleTile>().SetPosition(PossibleTileLocations[availableLocationIndexes[selectedIndex]]);
-            TileLocations[i] = availableLocationIndexes[selectedIndex];
-            availableLocationIndexes.RemoveAt(selectedIndex);
-        }
+        Randomising = true;
         Destroy(Tiles[8].gameObject);
+        int lastMovedTile = -1;
+        for (int i = 0; i < RandomiseAmount; i++)
+        {
+            List<int> movableTiles = new List<int>();
+            for (int j = 0; j < Tiles.Length-1; j++)
+            {
+                if (lastMovedTile != j && CanTileMove(j))
+                {
+                    movableTiles.Add(j);
+                }
+            }
+            int randomTile = UnityEngine.Random.Range(0, movableTiles.Count);
+            Tiles[movableTiles[randomTile]].GetComponent<PuzzleTile>().MoveTile();
+            lastMovedTile = movableTiles[randomTile];
+
+        }
+        Randomising = false;
     }
 
     public int FindTileSpaceIndex(int tileIndex)
@@ -64,11 +77,11 @@ public class TileManager : MonoBehaviour
         int tileSpaceIndex = FindTileSpaceIndex(tileIndex);
         TileLocations[8] = tileSpaceIndex;
         TileLocations[tileIndex] = emptySpaceIndex;
-        if (IsPuzzleComplete())
+        if (IsPuzzleComplete() && Randomising == false)
         {
             GameManager.EndGame();
         }
-        if (FirstMove)
+        if (FirstMove && Randomising == false)
         {
             GameManager.StartGame();
         }
