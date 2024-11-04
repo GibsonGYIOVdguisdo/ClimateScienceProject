@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     TileManager TileManager;
 
     static int SpriteIndex = 0;
-    static List<string> SpriteFileNames = new List<string> {"Solarpower", "Windpower"};
+    static List<string> SpriteFileNames = new List<string> { "Solarpower", "Windpower" };
     static List<string> SpriteTitles = new List<string> { "Solarpanels", "Wind turbines" };
-    static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity", "Wind turbines use the wind to generate electricity"};
+    static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity", "Wind turbines use the wind to generate electricity" };
+    static List<float> Times = new List<float>();
+    static float LastTime = 0;
 
     private void Start()
     {
@@ -26,9 +28,14 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         timer.StartTimer();
+
     }
     public void EndGame()
     {
+        float currentTime = timer.GetCurrentTime();
+        Times.Add(currentTime);
+        LastTime = currentTime;
+        Times.Sort();
         SceneManager.LoadScene("PostPuzzle");
     }
 
@@ -51,5 +58,19 @@ public class GameManager : MonoBehaviour
         {
             SpriteIndex = 0;
         }
+    }
+    public static float GetLastTime()
+    {
+        return LastTime;
+    }
+
+    public static int GetLastPlacement()
+    {
+        return Times.IndexOf(LastTime) + 1;
+    }
+
+    public static List<float> GetAllTimes()
+    {
+        return Times;
     }
 }
