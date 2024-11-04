@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     static List<string> SpriteFileNames = new List<string> {"Solarpower", "Windpower"};
     static List<string> SpriteTitles = new List<string> { "Solarpanels", "Wind turbines" };
     static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity", "Wind turbines use the wind to generate electricity"};
+    static List<float> Times = new List<float>();
+    static float LastTime = 0;
 
     private void Start()
     {
@@ -26,9 +28,13 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         timer.StartTimer();
+
     }
     public void EndGame()
     {
+        float currentTime = timer.GetCurrentTime();
+        Times.Add(currentTime);
+        LastTime = currentTime;
         SceneManager.LoadScene("PostPuzzle");
     }
 
