@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 44672003}
   - component: {fileID: 44672002}
   m_Layer: 5
-  m_Name: Places (1)
+  m_Name: Times
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,8 +386,8 @@ RectTransform:
   - {fileID: 150332664}
   - {fileID: 1194578358}
   - {fileID: 869438623}
-  - {fileID: 235604252}
   - {fileID: 44672001}
+  - {fileID: 235604252}
   - {fileID: 2137095832}
   - {fileID: 363137069}
   - {fileID: 191949774}
@@ -2040,7 +2040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae3ecc542cf33644bf70f837ddec972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1349892125}
 --- !u!1 &869438622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,6 +2051,7 @@ GameObject:
   - component: {fileID: 869438623}
   - component: {fileID: 869438625}
   - component: {fileID: 869438624}
+  - component: {fileID: 869438626}
   m_Layer: 5
   m_Name: Leaderboard
   m_TagString: Untagged
@@ -2177,6 +2177,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869438622}
   m_CullTransparentMesh: 1
+--- !u!114 &869438626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869438622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed5f3f89ad66e549ae9b65fe588b5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeText: {fileID: 44672000}
+  PersonalPlacementText: {fileID: 363137068}
+  PersonalTimeText: {fileID: 191949773}
 --- !u!1 &1038105794
 GameObject:
   m_ObjectHideFlags: 0
