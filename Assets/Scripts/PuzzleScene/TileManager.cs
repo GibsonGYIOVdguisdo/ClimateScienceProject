@@ -92,21 +92,27 @@ public class TileManager : MonoBehaviour
     {
         int SpaceOfTile = FindTileSpaceIndex(tileIndex);
         int SpaceOfEmpty = FindTileSpaceIndex(-1);
+        Debug.Log($"tileIndex: {tileIndex}, SpaceOfTile: {SpaceOfTile}, SpaceOfEmpty: {SpaceOfEmpty}");
+        // Checks vertical movement
         if (Mathf.Abs(SpaceOfTile - SpaceOfEmpty) == 3)
         {
             return true;
         }
-        else if (Mathf.Abs(SpaceOfTile % 3) == 2)
+        // Checks movement to the right
+        if (Mathf.Abs(SpaceOfTile % 3) != 2)
         {
-            return (SpaceOfTile - 1) == SpaceOfEmpty;
+            if ((SpaceOfTile + 1) == SpaceOfEmpty){
+                return true;
+            }
         }
-        else if (Mathf.Abs(SpaceOfTile % 3) == 0)
+        // Checks movement to the left
+        if (Mathf.Abs(SpaceOfTile % 3) != 0)
         {
-            return (SpaceOfTile + 1) == SpaceOfEmpty;
+            if ((SpaceOfTile - 1) == SpaceOfEmpty)
+            {
+                return true;
+            }
         }
-        else
-        {
-            return MathF.Abs(SpaceOfTile - SpaceOfEmpty) == 1;
-        }
+        return false;
     }
 }
