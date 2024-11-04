@@ -4,6 +4,7 @@ using System.Linq;
 using System;
 public class TileManager : MonoBehaviour
 {
+    private GameManager GameManager;
     public GameObject[] Tiles;
     public Vector2[] PossibleTileLocations = new Vector2[9];
     // Index is the Index used to identify the tile, value is the index of the space
@@ -14,12 +15,9 @@ public class TileManager : MonoBehaviour
     private int EmptyTile;
     void Start()
     {
+        TileManager = FindFirstObjectByType<TileManager>();
         LoadTileImages();
         RandomiseTiles();
-    }
-
-    private void Update()
-    {
     }
 
     void LoadTileImages()
@@ -73,7 +71,7 @@ public class TileManager : MonoBehaviour
         TileLocations[tileIndex] = emptySpaceIndex;
         if (IsPuzzleComplete())
         {
-            Debug.Log("Correct order");
+            GameManager.EndGame();
         }
     }
 
