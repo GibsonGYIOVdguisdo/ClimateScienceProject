@@ -4,9 +4,11 @@ public class PuzzleTile : MonoBehaviour
 {
     public int TileIndex;
     private Vector2 OriginalPosition;
+    private TileManager TileManager;
 
     private void Start()
     {
+        TileManager = FindFirstObjectByType<TileManager>();
         OriginalPosition = transform.position;
     }
 
@@ -24,5 +26,13 @@ public class PuzzleTile : MonoBehaviour
     public void SetPosition(Vector2 position)
     {
         gameObject.transform.position = position;
+    }
+
+    public void MoveTile()
+    {
+        int EmptySpace = TileManager.FindTileSpaceIndex(-1);
+        Vector2 EmptySpaceLocation = TileManager.GetLocationOfTileSpace(EmptySpace);
+        SetPosition(EmptySpaceLocation);
+        TileManager.UpdateTileLocation(TileIndex);
     }
 }
