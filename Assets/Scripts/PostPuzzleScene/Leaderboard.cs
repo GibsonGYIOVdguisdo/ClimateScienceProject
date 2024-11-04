@@ -14,9 +14,13 @@ public class Leaderboard : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            if (i < scores.Count)
+            if (i >= scores.Count)
             {
                 newText += "0\n";
+            }
+            else
+            {
+                newText += Mathf.Floor(scores[i]) + "\n";
             }
         }
         TimeText.GetComponent<TMP_Text>().text = newText;
