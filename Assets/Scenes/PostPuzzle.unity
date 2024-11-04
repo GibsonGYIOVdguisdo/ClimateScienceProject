@@ -1396,6 +1396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxIdleTime: 20
+  Running: 1
 --- !u!4 &421858163
 Transform:
   m_ObjectHideFlags: 0

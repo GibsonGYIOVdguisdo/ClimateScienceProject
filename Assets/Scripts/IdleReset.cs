@@ -8,7 +8,7 @@ public class IdleReset : MonoBehaviour
 {
     public float MaxIdleTime = 20;
     float CurrentIdleTime = 0;
-	bool Running = false;
+	public bool Running = false;
 
     private void Update()
 	{

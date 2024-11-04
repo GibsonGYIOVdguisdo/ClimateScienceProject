@@ -2635,8 +2635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abea17fd31e9b04291f4268616776b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBeforeReset: 20
-  TimeOnLeaderboardScreen: 0
 --- !u!1 &1354959293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,6 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxIdleTime: 20
+  Running: 0
 --- !u!4 &1717678681
 Transform:
   m_ObjectHideFlags: 0
@@ -3508,6 +3507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0f5d6df1086fd488ed4e8cc73b68e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleReset: {fileID: 1717678680}
+  RandomiseAmount: 20
   Tiles:
   - {fileID: 37480091}
   - {fileID: 738322042}
