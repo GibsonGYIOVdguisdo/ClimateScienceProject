@@ -52,7 +52,8 @@ public class TileManager : MonoBehaviour
 
     public int FindTileSpaceIndex(int tileIndex)
     {
-        if (tileIndex == -1) {
+        if (tileIndex == -1)
+        {
             // Tile 8 is the deleted tile
             return TileLocations[8];
         }
@@ -70,5 +71,21 @@ public class TileManager : MonoBehaviour
         Debug.Log($"{tileIndex} has moved from {tileSpaceIndex} to {emptySpaceIndex}");
         TileLocations[8] = tileSpaceIndex;
         TileLocations[tileIndex] = emptySpaceIndex;
+        if (IsOrderCorrect())
+        {
+            Debug.Log("Correct order");
+        }
+    }
+
+    bool IsPuzzleComplete()
+    {
+        for (int i = 0; i < TileLocations.Length; i++)
+        {
+            if (i != TileLocations[i])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
