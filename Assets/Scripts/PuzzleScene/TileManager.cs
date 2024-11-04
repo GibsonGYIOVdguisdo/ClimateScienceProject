@@ -11,22 +11,18 @@ public class TileManager : MonoBehaviour
     public int[] TileLocations = new int[9];
 
     private int SelectedImageIndex = 0;
-    private string SelectedImage;
+
     private int EmptyTile;
     bool FirstMove = true;
     void Start()
     {
         GameManager = FindFirstObjectByType<GameManager>();
-        LoadTileImages();
-        RandomiseTiles();
     }
 
-    void LoadTileImages()
+    public void LoadTileImages(string imageToLoad)
     {
-        string spriteLocation = "Sprites/" + SelectedImage;
+        string spriteLocation = "Sprites/" + imageToLoad;
         Sprite[] sprites = Resources.LoadAll<Sprite>(spriteLocation);
-
-        SelectedImage = "Solarpower";
         for (int i = 0; i < Tiles.Length; i++)
         {
             PossibleTileLocations[i] = Tiles[i].transform.position;
@@ -34,7 +30,7 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    void RandomiseTiles()
+    public void RandomiseTiles()
     {
         List<int> availableLocationIndexes = Enumerable.Range(0, PossibleTileLocations.Length).ToList();
 
