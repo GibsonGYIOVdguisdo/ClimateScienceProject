@@ -14,10 +14,16 @@ public class GameManager : MonoBehaviour
     static List<float> Times = new List<float>();
     static float LastTime = 0;
 
+    int LastReset = DateTime.Now.Day;
+
     private void Start()
     {
         if (gameObject.name == "GameManager")
         {
+            if (LastReset != DateTime.Now.Day)
+            {
+                Times = new List<float>();
+            }
             timer = FindFirstObjectByType<Timer>();
             TileManager = FindFirstObjectByType<TileManager>();
             TileManager.LoadTileImages(SpriteFileNames[SpriteIndex]);
