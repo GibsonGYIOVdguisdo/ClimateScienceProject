@@ -13,9 +13,10 @@ public class TileManager : MonoBehaviour
     private int SelectedImageIndex = 0;
     private string SelectedImage;
     private int EmptyTile;
+    bool FirstMove = true;
     void Start()
     {
-        TileManager = FindFirstObjectByType<TileManager>();
+        GameManager = FindFirstObjectByType<GameManager>();
         LoadTileImages();
         RandomiseTiles();
     }
@@ -72,6 +73,10 @@ public class TileManager : MonoBehaviour
         if (IsPuzzleComplete())
         {
             GameManager.EndGame();
+        }
+        if (FirstMove)
+        {
+            GameManager.StartGame();
         }
     }
 
