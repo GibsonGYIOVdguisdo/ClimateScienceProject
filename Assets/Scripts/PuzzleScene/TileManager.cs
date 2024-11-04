@@ -39,7 +39,6 @@ public class TileManager : MonoBehaviour
             int selectedIndex = UnityEngine.Random.Range(0, availableLocationIndexes.Count);
             Tiles[i].GetComponent<PuzzleTile>().SetPosition(PossibleTileLocations[availableLocationIndexes[selectedIndex]]);
             TileLocations[i] = availableLocationIndexes[selectedIndex];
-            Debug.Log($"tile {i} was placed {availableLocationIndexes[selectedIndex]}");
             availableLocationIndexes.RemoveAt(selectedIndex);
         }
         Destroy(Tiles[8].gameObject);
@@ -63,7 +62,6 @@ public class TileManager : MonoBehaviour
     {
         int emptySpaceIndex = FindTileSpaceIndex(-1);
         int tileSpaceIndex = FindTileSpaceIndex(tileIndex);
-        Debug.Log($"{tileIndex} has moved from {tileSpaceIndex} to {emptySpaceIndex}");
         TileLocations[8] = tileSpaceIndex;
         TileLocations[tileIndex] = emptySpaceIndex;
         if (IsPuzzleComplete())
@@ -92,7 +90,6 @@ public class TileManager : MonoBehaviour
     {
         int SpaceOfTile = FindTileSpaceIndex(tileIndex);
         int SpaceOfEmpty = FindTileSpaceIndex(-1);
-        Debug.Log($"tileIndex: {tileIndex}, SpaceOfTile: {SpaceOfTile}, SpaceOfEmpty: {SpaceOfEmpty}");
         // Checks vertical movement
         if (Mathf.Abs(SpaceOfTile - SpaceOfEmpty) == 3)
         {

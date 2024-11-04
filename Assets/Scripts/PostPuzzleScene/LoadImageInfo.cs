@@ -1,8 +1,6 @@
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class LoadImageInfo : MonoBehaviour
