@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 public class NextButton : MonoBehaviour
 {
     public GameManager GameManager;
-    public void GoToNextPuzzle()
+    private void Start()
     {
         GameManager.ItterateSpriteIndex();
+    }
+    public void GoToNextPuzzle()
+    {
         SceneManager.LoadScene("Puzzle");
     }
 }
