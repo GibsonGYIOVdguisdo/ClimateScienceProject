@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: solarpower_0
+      name: Solarpower_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,16 +126,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d255f14d5697dffe0800000000000000
-      internalID: -1153632451279497939
+      spriteID: e6e87eb73bd8de24681b9609c94976ed
+      internalID: 1768139175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_1
+      name: Solarpower_1
       rect:
         serializedVersion: 2
         x: 166
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37c458d230fa52441b3e36073755cf32
-      internalID: 2090926722
+      spriteID: c82b4721380d57d4c8af463727b0c382
+      internalID: -960221087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_2
+      name: Solarpower_2
       rect:
         serializedVersion: 2
         x: 332
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c100639f3a8ed7f449dcb2410c1c5fad
-      internalID: 1631800043
+      spriteID: 7129cfacb1e71ad4183b41bf1b3ef6f0
+      internalID: 1600458892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_3
+      name: Solarpower_3
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9cbd0184965eee4fa009dee51735bf2
-      internalID: -22339855
+      spriteID: 55a439f9c5270924b9a856d8cad69fb9
+      internalID: 434232614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_4
+      name: Solarpower_4
       rect:
         serializedVersion: 2
         x: 166
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985bf0e467149114ea34e3dfeee4ef18
-      internalID: -2128199141
+      spriteID: 8bd02240a0a819345b638f41cd776ebc
+      internalID: 683935823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_5
+      name: Solarpower_5
       rect:
         serializedVersion: 2
         x: 332
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728dfd877e9a2434abea169f82b15eae
-      internalID: 251945590
+      spriteID: 17656c7e60b83b34483b325a8da9f004
+      internalID: 691523047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_6
+      name: Solarpower_6
       rect:
         serializedVersion: 2
         x: 0
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52bbd5decb032b64fb7dbf8b46d08ccb
-      internalID: -1976577238
+      spriteID: 36333503a90a1f542ae518982705aaf7
+      internalID: 1637848941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_7
+      name: Solarpower_7
       rect:
         serializedVersion: 2
         x: 166
@@ -282,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff63d9db10345994bacaceae8cf1fdbb
-      internalID: -125598811
+      spriteID: c0542c88ffdd4e346a1c83c8dde075ba
+      internalID: -1530419216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: solarpower_8
+      name: Solarpower_8
       rect:
         serializedVersion: 2
         x: 332
@@ -304,8 +304,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a17c41112f3034a95ac0fb464fac84
-      internalID: -1708580543
+      spriteID: ff66279247bf3c345aeed544e4bdea95
+      internalID: 1946754600
       vertices: []
       indices: 
       edges: []
@@ -324,15 +324,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      solarpower_0: -1153632451279497939
-      solarpower_1: 2090926722
-      solarpower_2: 1631800043
-      solarpower_3: -22339855
-      solarpower_4: -2128199141
-      solarpower_5: 251945590
-      solarpower_6: -1976577238
-      solarpower_7: -125598811
-      solarpower_8: -1708580543
+      Solarpower_0: 1768139175
+      Solarpower_1: -960221087
+      Solarpower_2: 1600458892
+      Solarpower_3: 434232614
+      Solarpower_4: 683935823
+      Solarpower_5: 691523047
+      Solarpower_6: 1637848941
+      Solarpower_7: -1530419216
+      Solarpower_8: 1946754600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
