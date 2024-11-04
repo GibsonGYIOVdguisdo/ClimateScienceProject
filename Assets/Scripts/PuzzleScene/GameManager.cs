@@ -44,8 +44,12 @@ public class GameManager : MonoBehaviour
     {
         return SpriteDescriptions[SpriteIndex];
     }
-    public static void SetSpriteIndex(int index)
+    public static void ItterateSpriteIndex()
     {
-        SpriteIndex = index;
+        SpriteIndex += 1;
+        if (SpriteIndex >= SpriteFileNames.Count)
+        {
+            SpriteIndex = 0;
+        }
     }
 }
