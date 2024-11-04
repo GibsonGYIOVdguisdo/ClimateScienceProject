@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        timer = FindFirstObjectByType<Timer>();
-        TileManager = FindFirstObjectByType<TileManager>();
-        TileManager.LoadTileImages(SpriteFileNames[SpriteIndex]);
-        TileManager.RandomiseTiles();
+        if (gameObject.name == "GameManager")
+        {
+            timer = FindFirstObjectByType<Timer>();
+            TileManager = FindFirstObjectByType<TileManager>();
+            TileManager.LoadTileImages(SpriteFileNames[SpriteIndex]);
+            TileManager.RandomiseTiles();
+        }
     }
     public void StartGame()
     {
