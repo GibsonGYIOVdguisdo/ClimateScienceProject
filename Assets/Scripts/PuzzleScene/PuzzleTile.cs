@@ -30,9 +30,12 @@ public class PuzzleTile : MonoBehaviour
 
     public void MoveTile()
     {
-        int EmptySpace = TileManager.FindTileSpaceIndex(-1);
-        Vector2 EmptySpaceLocation = TileManager.GetLocationOfTileSpace(EmptySpace);
-        SetPosition(EmptySpaceLocation);
-        TileManager.UpdateTileLocation(TileIndex);
+        if (TileManager.CanTileMove(TileIndex))
+        {
+            int EmptySpace = TileManager.FindTileSpaceIndex(-1);
+            Vector2 EmptySpaceLocation = TileManager.GetLocationOfTileSpace(EmptySpace);
+            SetPosition(EmptySpaceLocation);
+            TileManager.UpdateTileLocation(TileIndex);
+        }
     }
 }

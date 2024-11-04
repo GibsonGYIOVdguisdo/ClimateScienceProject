@@ -88,4 +88,26 @@ public class TileManager : MonoBehaviour
         }
         return true;
     }
+
+    public bool CanTileMove(int tileIndex)
+    {
+        int SpaceOfTile = FindTileSpaceIndex(tileIndex);
+        int SpaceOfEmpty = FindTileSpaceIndex(-1);
+        if (Mathf.Abs(SpaceOfTile - SpaceOfEmpty) == 3)
+        {
+            return true;
+        }
+        else if (Mathf.Abs(SpaceOfTile % 3) == 2)
+        {
+            return (SpaceOfTile - 1) == SpaceOfEmpty;
+        }
+        else if (Mathf.Abs(SpaceOfTile % 3) == 0)
+        {
+            return (SpaceOfTile + 1) == SpaceOfEmpty;
+        }
+        else
+        {
+            return MathF.Abs(SpaceOfTile - SpaceOfEmpty) == 1;
+        }
+    }
 }
