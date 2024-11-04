@@ -71,7 +71,7 @@ public class TileManager : MonoBehaviour
         Debug.Log($"{tileIndex} has moved from {tileSpaceIndex} to {emptySpaceIndex}");
         TileLocations[8] = tileSpaceIndex;
         TileLocations[tileIndex] = emptySpaceIndex;
-        if (IsOrderCorrect())
+        if (IsPuzzleComplete())
         {
             Debug.Log("Correct order");
         }
