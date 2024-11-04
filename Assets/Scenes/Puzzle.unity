@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb5f0499f850a944bb410ff74236a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileIndex: 0
+  TileIndex: 5
 --- !u!114 &355001229
 MonoBehaviour:
   m_ObjectHideFlags: 0
