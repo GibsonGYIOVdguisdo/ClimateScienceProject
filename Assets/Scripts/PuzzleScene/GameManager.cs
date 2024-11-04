@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
     TileManager TileManager;
 
     static int SpriteIndex = 0;
-    public static List<string> SpriteFileNames;
-    public static List<string> SpriteTitles;
-    public static List<string> SpriteDescriptions;
+    static List<string> SpriteFileNames = new List<string> {"Solarpower"};
+    static List<string> SpriteTitles = new List<string> { "Solarpanels" };
+    static List<string> SpriteDescriptions = new List<string> { "Solarpanels absorb light from the sun to generate electricity" };
 
     private void Start()
     {
@@ -25,5 +25,22 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
 
+    }
+
+    public static string GetImageLocation()
+    {
+        return $"Sprites/{SpriteFileNames[SpriteIndex]}";
+    }
+    public static string GetSpriteTitle()
+    {
+        return SpriteTitles[SpriteIndex];
+    }
+    public static string GetSpriteDescription()
+    {
+        return SpriteDescriptions[SpriteIndex];
+    }
+    public static void SetSpriteIndex(int index)
+    {
+        SpriteIndex = index;
     }
 }
